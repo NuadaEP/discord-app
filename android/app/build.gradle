@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.discord"
+        applicationId "com.discording"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

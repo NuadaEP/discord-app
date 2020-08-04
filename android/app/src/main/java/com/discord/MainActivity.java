@@ -1,4 +1,4 @@
-package com.discord;
+package com.discording;
 
 import com.facebook.react.ReactActivity;
 
