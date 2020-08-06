@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 
 import Input from '~/components/Input';
 
-import {Container, Title} from './styles';
+import {Container, Title, Warning, LinkText} from './styles';
 
 function SingUp() {
   const emailRef = useRef(null);
@@ -27,7 +27,11 @@ function SingUp() {
         blurOnSubmit={false}
         style={{marginTop: 20, marginBottom: 10}}
       />
-      <Input placeholder="Password" fieldRef={passwordRef} />
+      <Input placeholder="Password" fieldRef={passwordRef} secureTextEntry />
+      <Warning>
+        When you registering, you agree to <LinkText>Terms of service</LinkText>{' '}
+        and the <LinkText>privacy policy</LinkText> of Discording.
+      </Warning>
     </Container>
   );
 }

@@ -12,3 +12,15 @@ export const Title = styled.Text`
   font-weight: bold;
   margin: 20px 0 30px 0;
 `;
+
+export const Warning = styled.Text`
+  width: 90%;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 14px;
+  color: hsla(0, 0%, 100%, 0.6);
+`;
+
+export const LinkText = styled.Text`
+  color: #7289da;
+`;
