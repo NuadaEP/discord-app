@@ -25,6 +25,7 @@ function SingUp() {
         onSubmitEditing={() => passwordRef.current.focus()}
         returnKeyType="next"
         blurOnSubmit={false}
+        style={{marginTop: 20, marginBottom: 10}}
       />
       <Input placeholder="Password" fieldRef={passwordRef} />
     </Container>

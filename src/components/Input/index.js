@@ -2,10 +2,10 @@ import React from 'react';
 
 import {Container, Label, Content, Placeholder, Field} from './styles';
 
-function Input({label = '', placeholder = '', fieldRef, ...rest}) {
+function Input({label = '', placeholder = '', fieldRef, style, ...rest}) {
   return (
-    <Container>
-      <Label>{label}</Label>
+    <Container style={style}>
+      {!!label && <Label>{label}</Label>}
       <Content>
         <Placeholder>{placeholder}</Placeholder>
         <Field
