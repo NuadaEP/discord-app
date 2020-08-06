@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  width: 90%;
+  width: 100%;
 `;
 export const Label = styled.Text`
   font-size: 14px;

@@ -1,6 +1,7 @@
 import React, {useRef} from 'react';
 
 import Input from '~/components/Input';
+import Button from '~/components/Button';
 
 import {Container, Title, Warning, LinkText} from './styles';
 
@@ -32,6 +33,13 @@ function SingUp() {
         When you registering, you agree to <LinkText>Terms of service</LinkText>{' '}
         and the <LinkText>privacy policy</LinkText> of Discording.
       </Warning>
+
+      <Button
+        blue
+        text="Create account"
+        style={{marginTop: 30}}
+        onPress={() => {}}
+      />
     </Container>
   );
 }

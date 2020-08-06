@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
+  width: 100%;
   justify-content: center;
   align-items: center;
   background-color: ${({blue}) => (blue ? '#7289da' : '#656569')};
