@@ -23,7 +23,7 @@ function Input({
           ref={fieldRef}
           {...rest}
         />
-        <Error>{error}</Error>
+        {!!error && <Error>{error}</Error>}
       </Content>
     </Container>
   );

@@ -5,8 +5,8 @@ import Main from '~/pages/Main';
 import SingUp from '~/pages/SingUp';
 
 const screens = {
-  SingUp,
   Main,
+  SingUp,
 };
 
 const config = {
