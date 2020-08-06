@@ -14,7 +14,7 @@ import {
   Description,
 } from './styles';
 
-export default function Main() {
+export default function Main({navigation}) {
   return (
     <Container>
       <LogoContainer>
@@ -33,7 +33,7 @@ export default function Main() {
         </Description>
         <Button
           text="Sign Up"
-          onPress={() => {}}
+          onPress={() => navigation.navigate('SingUp')}
           blue
           style={{marginBottom: 10, width: '90%'}}
         />
