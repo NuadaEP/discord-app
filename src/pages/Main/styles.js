@@ -5,7 +5,7 @@ export const Container = styled.View`
   background: #36393f;
 `;
 export const LogoContainer = styled.View`
-  flex: 2;
+  flex: 3;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ export const Logo = styled.Image`
   height: 50px;
 `;
 export const Content = styled.View`
-  flex: 1;
+  flex: 2;
   justify-content: center;
   align-items: center;
 `;
@@ -30,4 +30,9 @@ export const Description = styled.Text`
   color: #e0e0e0;
   text-align: center;
   line-height: 20px;
+`;
+
+export const ActionContainer = styled.View`
+  flex: 1;
+  padding: 0 12px;
 `;

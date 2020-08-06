@@ -3,6 +3,8 @@ import React from 'react';
 import IconWhite from '~/assets/icon.png';
 import Written from '~/assets/written.png';
 
+import Button from '../../components/Button';
+
 import {
   Container,
   LogoContainer,
@@ -10,6 +12,7 @@ import {
   Content,
   Title,
   Description,
+  ActionContainer,
 } from './styles';
 
 export default function Main() {
@@ -30,6 +33,15 @@ export default function Main() {
           to talk with your friends and communities
         </Description>
       </Content>
+      <ActionContainer>
+        <Button
+          text="Sign Up"
+          onPress={() => {}}
+          blue
+          style={{marginBottom: 10}}
+        />
+        <Button text="Sign In" onPress={() => {}} />
+      </ActionContainer>
     </Container>
   );
 }
