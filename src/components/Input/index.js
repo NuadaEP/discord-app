@@ -1,12 +1,19 @@
 import React from 'react';
 
-import {Container, Label, Content, Placeholder, Field} from './styles';
+import {Container, Label, Content, Placeholder, Field, Error} from './styles';
 
-function Input({label = '', placeholder = '', fieldRef, style, ...rest}) {
+function Input({
+  label = '',
+  placeholder = '',
+  fieldRef,
+  style,
+  error,
+  ...rest
+}) {
   return (
     <Container style={style}>
       {!!label && <Label>{label}</Label>}
-      <Content>
+      <Content error={error}>
         <Placeholder>{placeholder}</Placeholder>
         <Field
           allowFontScaling={false}
@@ -16,6 +23,7 @@ function Input({label = '', placeholder = '', fieldRef, style, ...rest}) {
           ref={fieldRef}
           {...rest}
         />
+        {error && <Error>{error}</Error>}
       </Content>
     </Container>
   );
