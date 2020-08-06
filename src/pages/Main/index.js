@@ -12,7 +12,6 @@ import {
   Content,
   Title,
   Description,
-  ActionContainer,
 } from './styles';
 
 export default function Main() {
@@ -32,16 +31,14 @@ export default function Main() {
           Get together to more than 100 million people that are using Discording
           to talk with your friends and communities
         </Description>
-      </Content>
-      <ActionContainer>
         <Button
           text="Sign Up"
           onPress={() => {}}
           blue
-          style={{marginBottom: 10}}
+          style={{marginBottom: 10, width: '90%'}}
         />
-        <Button text="Sign In" onPress={() => {}} />
-      </ActionContainer>
+        <Button text="Sign In" onPress={() => {}} style={{width: '90%'}} />
+      </Content>
     </Container>
   );
 }

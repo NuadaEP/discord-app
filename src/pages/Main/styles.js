@@ -5,34 +5,32 @@ export const Container = styled.View`
   background: #36393f;
 `;
 export const LogoContainer = styled.View`
-  flex: 3;
+  flex: 1;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 `;
 export const Logo = styled.Image`
   width: 50px;
   height: 50px;
 `;
 export const Content = styled.View`
-  flex: 2;
-  justify-content: center;
+  flex: 1;
+  justify-content: flex-end;
   align-items: center;
+  margin-bottom: 20px;
 `;
 export const Title = styled.Text`
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   font-weight: bold;
 `;
 export const Description = styled.Text`
-  margin-top: 10px;
-  font-size: 14px;
-  color: #e0e0e0;
+  width: 80%;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  font-size: 12px;
   text-align: center;
   line-height: 20px;
-`;
-
-export const ActionContainer = styled.View`
-  flex: 1;
-  padding: 0 12px;
+  color: #e0e0e0;
 `;
