@@ -36,6 +36,14 @@ function SingUp() {
       setPassword({...password, error: 'Password is a required field'});
     }
 
+    if (password.text.length < 6) {
+      error = true;
+      setPassword({
+        ...password,
+        error: 'Password must be longer than 6 characters',
+      });
+    }
+
     if (error) {
       return;
     }
@@ -71,7 +79,8 @@ function SingUp() {
         returnKeyType="next"
         blurOnSubmit={false}
         value={username.text}
-        onChangeText={(text) => setUsername({...username, text})}
+        onChangeText={(text) => setUsername({text})}
+        error={username.error}
       />
       <Input
         label="Account information"
@@ -83,14 +92,16 @@ function SingUp() {
         keyboardType="email-address"
         style={{marginTop: 20, marginBottom: 10}}
         value={email.text}
-        onChangeText={(text) => setEmail({...email, text})}
+        onChangeText={(text) => setEmail({text})}
+        error={email.error}
       />
       <Input
         placeholder="Password"
         fieldRef={passwordRef}
         secureTextEntry
         value={password.text}
-        onChangeText={(text) => setPassword({...password, text})}
+        onChangeText={(text) => setPassword({text})}
+        error={password.error}
       />
       <Warning>
         When you registering, you agree to <LinkText>Terms of service</LinkText>{' '}
