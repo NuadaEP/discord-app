@@ -15,7 +15,6 @@ export const Title = styled.Text`
 `;
 
 export const Warning = styled.Text`
-  width: 90%;
   margin-top: 10px;
   font-size: 11px;
   line-height: 14px;
