@@ -5,7 +5,10 @@ import Main from '~/pages/Main';
 import SingUp from '~/pages/SingUp';
 import SingIn from '~/pages/SingIn';
 
+import Chats from '~/pages/Chats';
+
 const screens = {
+  Chats,
   Main,
   SingIn,
   SingUp,
