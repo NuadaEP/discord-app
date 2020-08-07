@@ -1,9 +1,10 @@
 import React, {useRef, useState, useCallback} from 'react';
 
+import Default from '../_layouts/Default';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-import {Container, Title, Warning, LinkText} from './styles';
+import {Warning, LinkText} from './styles';
 
 function SingUp() {
   const emailRef = useRef(null);
@@ -70,8 +71,7 @@ function SingUp() {
   }, [email, loading, password, username]);
 
   return (
-    <Container>
-      <Title>Sign Up</Title>
+    <Default title="Sign Up">
       <Input
         label="How the crow will call you?"
         placeholder="Username"
@@ -115,7 +115,7 @@ function SingUp() {
         loading={loading}
         style={{marginTop: 30}}
       />
-    </Container>
+    </Default>
   );
 }
 

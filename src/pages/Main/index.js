@@ -37,7 +37,11 @@ export default function Main({navigation}) {
           blue
           style={{marginBottom: 10, width: '90%'}}
         />
-        <Button text="Sign In" onPress={() => {}} style={{width: '90%'}} />
+        <Button
+          text="Sign In"
+          onPress={() => navigation.navigate('SingIn')}
+          style={{width: '90%'}}
+        />
       </Content>
     </Container>
   );

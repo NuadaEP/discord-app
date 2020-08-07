@@ -1,9 +1,10 @@
 import React, {useRef, useState, useCallback} from 'react';
 
+import Default from '../_layouts/Default';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 
-import {Container, Title, Warning, LinkText} from './styles';
+import {LinkText} from './styles';
 
 function SingIn() {
   const passwordRef = useRef(null);
@@ -63,9 +64,7 @@ function SingIn() {
   }, [email, loading, password]);
 
   return (
-    <Container>
-      <Title>Welcome back!</Title>
-      <Warning>Sign in with email to start talk.</Warning>
+    <Default title="Welcome back!" subtitle="Sign in with email to start talk.">
       <Input
         placeholder="E-mail"
         onSubmitEditing={() => passwordRef.current.focus()}
@@ -96,7 +95,7 @@ function SingIn() {
         loading={loading}
         style={{marginTop: 30}}
       />
-    </Container>
+    </Default>
   );
 }
 

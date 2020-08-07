@@ -6,8 +6,8 @@ import SingUp from '~/pages/SingUp';
 import SingIn from '~/pages/SingIn';
 
 const screens = {
-  SingIn,
   Main,
+  SingIn,
   SingUp,
 };
 
