@@ -3,8 +3,10 @@ import {createStackNavigator} from 'react-navigation-stack';
 
 import Main from '~/pages/Main';
 import SingUp from '~/pages/SingUp';
+import SingIn from '~/pages/SingIn';
 
 const screens = {
+  SingIn,
   Main,
   SingUp,
 };
