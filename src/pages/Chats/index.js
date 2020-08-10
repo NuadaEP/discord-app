@@ -1,12 +1,13 @@
 import React, {useMemo} from 'react';
 import {FlatList} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
 import ChatItem from '~/components/ChatItem';
 
 import LogoWhite from '~/assets/icon.png';
 
-import {Header, Title, Icon} from './styles';
+import {Header, Title} from './styles';
 
 function Chats() {
   const chats = useMemo(
@@ -49,7 +50,7 @@ function Chats() {
     <Default>
       <Header>
         <Title>Direct Messages</Title>
-        <Icon>X</Icon>
+        <Icon name="add-circle" size={24} color="white" />
       </Header>
       <FlatList
         data={chats}
