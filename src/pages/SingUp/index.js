@@ -6,7 +6,7 @@ import Button from '~/components/Button';
 
 import {Warning, LinkText} from './styles';
 
-function SingUp() {
+function SingUp({navigation}) {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -43,6 +43,7 @@ function SingUp() {
         ...password,
         error: 'Password must be longer than 6 characters',
       });
+      navigation.navigate('Chats');
     }
 
     if (error) {
@@ -68,7 +69,7 @@ function SingUp() {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, [email, loading, password, username]);
+  }, [email, loading, navigation, password, username]);
 
   return (
     <Default title="Sign Up">

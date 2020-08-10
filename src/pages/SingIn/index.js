@@ -6,7 +6,7 @@ import Button from '~/components/Button';
 
 import {LinkText} from './styles';
 
-function SingIn() {
+function SingIn({navigation}) {
   const passwordRef = useRef(null);
 
   const [email, setEmail] = useState({text: '', error: ''});
@@ -60,8 +60,9 @@ function SingIn() {
 
     setTimeout(() => {
       setLoading(false);
+      navigation.navigate('Chats');
     }, 2000);
-  }, [email, loading, password]);
+  }, [email, loading, navigation, password]);
 
   return (
     <Default title="Welcome back!" subtitle="Sign in with email to start talk.">
