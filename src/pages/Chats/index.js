@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useCallback} from 'react';
 import {FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -116,6 +116,11 @@ function Chats() {
     [],
   );
 
+  const renderItem = useCallback(
+    ({item}) => <ChatItem icon={item.icon} name={item.name} />,
+    [],
+  );
+
   return (
     <Default>
       <Header>
@@ -130,7 +135,8 @@ function Chats() {
         }}
         data={chats}
         keyExtractor={(item) => String(item._id)}
-        renderItem={({item}) => <ChatItem icon={item.icon} name={item.name} />}
+        renderItem={renderItem}
+        ListEmptyComponent={() => <Title>No chat found</Title>}
       />
     </Default>
   );
