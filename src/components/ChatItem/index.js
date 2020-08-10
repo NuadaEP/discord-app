@@ -4,7 +4,7 @@ import {Container, ImageContainer, Icon, Title} from './styles';
 
 function ChatItem({icon, name}) {
   return (
-    <Container>
+    <Container onPress={() => {}}>
       <ImageContainer>
         <Icon source={icon} resizeMode="contain" />
       </ImageContainer>

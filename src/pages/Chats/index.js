@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {FlatList, Text} from 'react-native';
+import {FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
@@ -120,7 +120,9 @@ function Chats() {
     <Default>
       <Header>
         <Title>Direct Messages</Title>
-        <Icon name="add-circle" size={24} color="white" />
+        <TouchableOpacity onPress={() => {}}>
+          <Icon name="add-circle" size={24} color="white" />
+        </TouchableOpacity>
       </Header>
       <FlatList
         style={{

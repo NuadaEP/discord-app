@@ -8,7 +8,12 @@ import SingIn from '~/pages/SingIn';
 import Chats from '~/pages/Chats';
 
 const screens = {
-  Chats,
+  Chats: {
+    screen: Chats,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   Main,
   SingIn,
   SingUp,

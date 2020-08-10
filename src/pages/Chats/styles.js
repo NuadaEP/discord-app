@@ -4,6 +4,7 @@ export const Header = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  padding: 20px 10px;
   margin-bottom: 10px;
 `;
 

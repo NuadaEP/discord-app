@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   width: 100%;
-  /* border: 1px solid red; */
   flex-direction: row;
   padding: 10px;
   align-items: center;
@@ -20,7 +19,7 @@ export const Icon = styled.Image`
 `;
 
 export const Title = styled.Text`
-  color: #656569;
+  color: #858589;
   font-size: 15px;
   font-weight: bold;
   margin-left: 15px;
