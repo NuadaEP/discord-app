@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
@@ -42,6 +42,76 @@ function Chats() {
         icon: LogoWhite,
         name: 'Matheus Montanini',
       },
+      {
+        _id: 7,
+        icon: LogoWhite,
+        name: 'Bruno Cardoso',
+      },
+      {
+        _id: 8,
+        icon: LogoWhite,
+        name: 'Bruna',
+      },
+      {
+        _id: 9,
+        icon: LogoWhite,
+        name: 'Leornardo Montanini',
+      },
+      {
+        _id: 10,
+        icon: LogoWhite,
+        name: 'Jenifer Lacerda',
+      },
+      {
+        _id: 11,
+        icon: LogoWhite,
+        name: 'Mayra',
+      },
+      {
+        _id: 12,
+        icon: LogoWhite,
+        name: 'Victor Pasteleiro',
+      },
+      {
+        _id: 13,
+        icon: LogoWhite,
+        name: 'Gabriel Merlini',
+      },
+      {
+        _id: 14,
+        icon: LogoWhite,
+        name: 'Lucas Cone',
+      },
+      {
+        _id: 15,
+        icon: LogoWhite,
+        name: 'Maju',
+      },
+      {
+        _id: 16,
+        icon: LogoWhite,
+        name: 'Débora',
+      },
+      {
+        _id: 17,
+        icon: LogoWhite,
+        name: 'Fran',
+      },
+      {
+        _id: 18,
+        icon: LogoWhite,
+        name: 'Lais',
+      },
+      {
+        _id: 19,
+        icon: LogoWhite,
+        name: 'Rhayana',
+      },
+      {
+        _id: 20,
+        icon: LogoWhite,
+        name: 'Luana',
+      },
     ],
     [],
   );
@@ -53,9 +123,12 @@ function Chats() {
         <Icon name="add-circle" size={24} color="white" />
       </Header>
       <FlatList
+        style={{
+          width: '100%',
+        }}
         data={chats}
         keyExtractor={(item) => String(item._id)}
-        renderItem={(item) => <ChatItem icon={item.icon} name={item.name} />}
+        renderItem={({item}) => <ChatItem icon={item.icon} name={item.name} />}
       />
     </Default>
   );

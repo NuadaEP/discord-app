@@ -1,11 +1,13 @@
 import React from 'react';
 
-import {Container, Icon, Title} from './styles';
+import {Container, ImageContainer, Icon, Title} from './styles';
 
 function ChatItem({icon, name}) {
   return (
     <Container>
-      <Icon source={icon} />
+      <ImageContainer>
+        <Icon source={icon} resizeMode="contain" />
+      </ImageContainer>
       <Title>{name}</Title>
     </Container>
   );
