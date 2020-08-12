@@ -9,7 +9,7 @@ function SearchInput({...rest}) {
       <Field
         placeholder="Find and start a chat"
         placeholderTextColor="#858589"
-        returnKeyType=""
+        returnKeyType="search"
         keyboardAppearance="dark"
         {...rest}
       />

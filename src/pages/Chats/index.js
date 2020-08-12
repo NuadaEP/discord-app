@@ -11,7 +11,7 @@ import LogoWhite from '~/assets/icon.png';
 import {Header, Title} from './styles';
 
 function Chats() {
-  const [search, setSearch] = useState('');
+  const [searchResult, setSearchResult] = useState([]);
 
   const chats = useMemo(
     () => [
@@ -124,6 +124,23 @@ function Chats() {
     [],
   );
 
+  const handleChat = useCallback(
+    (text) => {
+      const handle = chats.map((item) => {
+        if (item.name.search(text) !== -1) {
+          return item;
+        }
+
+        return {};
+      });
+
+      const filter = handle.filter((item) => Object.keys(item).length > 0);
+
+      setSearchResult(filter);
+    },
+    [chats],
+  );
+
   return (
     <Default>
       <Header>
@@ -132,12 +149,12 @@ function Chats() {
           <Icon name="add-circle" size={24} color="white" />
         </TouchableOpacity>
       </Header>
-      <SearchInput value={search} onChangeText={(text) => setSearch({text})} />
+      <SearchInput onChangeText={(text) => handleChat(text)} />
       <FlatList
         style={{
           width: '100%',
         }}
-        data={chats}
+        data={searchResult.length > 0 ? searchResult : chats}
         keyExtractor={(item) => String(item._id)}
         renderItem={renderItem}
         ListEmptyComponent={() => <Title>No chat found</Title>}

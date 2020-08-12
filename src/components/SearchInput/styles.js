@@ -13,6 +13,7 @@ export const Container = styled.View`
 
 export const Field = styled.TextInput`
   padding: 0;
+  width: 80%;
   font-size: 15px;
   color: white;
 `;
