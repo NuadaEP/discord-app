@@ -1,6 +1,5 @@
 import React, {useMemo, useCallback, useState} from 'react';
-import {FlatList, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {FlatList} from 'react-native';
 
 import Default from '../_layouts/Default';
 import ChatItem from '~/components/ChatItem';
@@ -8,13 +7,13 @@ import SearchInput from '~/components/SearchInput';
 
 import LogoWhite from '~/assets/icon.png';
 
-import {Header, Title} from './styles';
+import {Title} from './styles';
 
-function Chats({navigation}) {
+function Users() {
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
-  const chats = useMemo(
+  const users = useMemo(
     () => [
       {
         _id: 1,
@@ -127,7 +126,7 @@ function Chats({navigation}) {
 
   const handleChat = useCallback(
     (text) => {
-      const handle = chats.map((item) => {
+      const handle = users.map((item) => {
         if (item.name.search(text) !== -1) {
           return item;
         }
@@ -139,7 +138,7 @@ function Chats({navigation}) {
 
       setSearchResult(filter);
     },
-    [chats],
+    [users],
   );
 
   const handleText = useCallback(
@@ -152,15 +151,6 @@ function Chats({navigation}) {
 
   return (
     <Default>
-      <Header>
-        <Title>Direct Messages</Title>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Users');
-          }}>
-          <Icon name="add-circle" size={24} color="white" />
-        </TouchableOpacity>
-      </Header>
       <SearchInput
         value={search}
         onChangeText={handleText}
@@ -171,7 +161,7 @@ function Chats({navigation}) {
         style={{
           width: '100%',
         }}
-        data={searchResult.length > 0 ? searchResult : chats}
+        data={searchResult.length > 0 ? searchResult : users}
         keyExtractor={(item) => String(item._id)}
         renderItem={renderItem}
         ListEmptyComponent={() => <Title>No chat found</Title>}
@@ -180,4 +170,4 @@ function Chats({navigation}) {
   );
 }
 
-export default Chats;
+export default Users;

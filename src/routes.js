@@ -6,15 +6,22 @@ import SingUp from '~/pages/SingUp';
 import SingIn from '~/pages/SingIn';
 
 import Chats from '~/pages/Chats';
+import Users from '~/pages/Users';
 
 const screens = {
-  Main,
   Chats: {
     screen: Chats,
     navigationOptions: {
       headerShown: false,
     },
   },
+  Users: {
+    screen: Users,
+    navigationOptions: {
+      headerTitle: 'Start to talk',
+    },
+  },
+  Main,
   SingIn,
   SingUp,
 };
