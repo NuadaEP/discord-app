@@ -1,15 +1,18 @@
-import React, {useMemo, useCallback} from 'react';
+import React, {useMemo, useCallback, useState} from 'react';
 import {FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
 import ChatItem from '~/components/ChatItem';
+import SearchInput from '~/components/SearchInput';
 
 import LogoWhite from '~/assets/icon.png';
 
 import {Header, Title} from './styles';
 
 function Chats() {
+  const [search, setSearch] = useState('');
+
   const chats = useMemo(
     () => [
       {
@@ -129,6 +132,7 @@ function Chats() {
           <Icon name="add-circle" size={24} color="white" />
         </TouchableOpacity>
       </Header>
+      <SearchInput value={search} onChangeText={(text) => setSearch({text})} />
       <FlatList
         style={{
           width: '100%',

@@ -5,7 +5,6 @@ export const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   padding: 20px 10px;
-  margin-bottom: 10px;
 `;
 
 export const Title = styled.Text`
