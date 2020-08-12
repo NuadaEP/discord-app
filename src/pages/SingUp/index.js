@@ -43,7 +43,6 @@ function SingUp({navigation}) {
         ...password,
         error: 'Password must be longer than 6 characters',
       });
-      navigation.navigate('Chats');
     }
 
     if (error) {
@@ -68,6 +67,7 @@ function SingUp({navigation}) {
 
     setTimeout(() => {
       setLoading(false);
+      navigation.navigate('Chats');
     }, 2000);
   }, [email, loading, navigation, password, username]);
 
@@ -82,6 +82,7 @@ function SingUp({navigation}) {
         value={username.text}
         onChangeText={(text) => setUsername({text})}
         error={username.error}
+        style={{marginTop: 20}}
       />
       <Input
         label="Account information"
