@@ -11,6 +11,7 @@ import LogoWhite from '~/assets/icon.png';
 import {Header, Title} from './styles';
 
 function Chats() {
+  const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
   const chats = useMemo(
@@ -141,6 +142,11 @@ function Chats() {
     [chats],
   );
 
+  const handleText = useCallback((text = '') => {
+    handleChat(text);
+    setSearch(text);
+  }, []);
+
   return (
     <Default>
       <Header>
@@ -149,7 +155,12 @@ function Chats() {
           <Icon name="add-circle" size={24} color="white" />
         </TouchableOpacity>
       </Header>
-      <SearchInput onChangeText={(text) => handleChat(text)} />
+      <SearchInput
+        value={search}
+        onChangeText={handleText}
+        submitSearch={() => handleChat(search)}
+        cleanField={handleText}
+      />
       <FlatList
         style={{
           width: '100%',
