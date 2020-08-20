@@ -10,6 +10,7 @@ import Users from '~/pages/Users';
 import Messages from '~/pages/Messages';
 
 const screens = {
+  Main,
   Chats: {
     screen: Chats,
     navigationOptions: {
@@ -28,7 +29,6 @@ const screens = {
       headerTitle: 'Start to talk',
     },
   },
-  Main,
   SingIn,
   SingUp,
 };

@@ -9,7 +9,7 @@ import LogoWhite from '~/assets/icon.png';
 
 import {Title} from './styles';
 
-function Users() {
+function Users({navigation}) {
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState([]);
 
@@ -120,7 +120,15 @@ function Users() {
   );
 
   const renderItem = useCallback(
-    ({item}) => <ChatItem icon={item.icon} name={item.name} />,
+    ({item}) => (
+      <ChatItem
+        icon={item.icon}
+        name={item.name}
+        onPress={() =>
+          navigation.navigate({routeName: 'Messages', params: {user: item}})
+        }
+      />
+    ),
     [],
   );
 
