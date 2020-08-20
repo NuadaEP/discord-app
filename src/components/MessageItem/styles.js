@@ -4,6 +4,7 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  margin: 12px 0;
 `;
 
 export const ImageContainer = styled.View`

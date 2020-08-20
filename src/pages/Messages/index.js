@@ -23,6 +23,17 @@ function Messages() {
           date: '18 de mai 12:02',
         },
       },
+      {
+        _id: 2,
+        user: {
+          icon: LogoWhite,
+          name: 'Bruno Cardoso',
+        },
+        message: {
+          text: 'Fala fi! Como q c tá meu mano?',
+          date: '18 de mai 12:03',
+        },
+      },
     ],
     [],
   );
@@ -53,6 +64,8 @@ function Messages() {
         data={messages}
         keyExtractor={(item) => String(item._id)}
         renderItem={renderItem}
+        initialScrollIndex={messages.length - 1}
+        inverted
       />
     </Default>
   );
