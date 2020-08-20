@@ -9,7 +9,7 @@ import LogoWhite from '~/assets/icon.png';
 
 import {Header, Title, MarkUp, Content, MessageField} from './styles';
 
-export default function Messages() {
+export default function Messages({navigation}) {
   const [text, setText] = useState('');
 
   const messages = useMemo(
@@ -18,7 +18,7 @@ export default function Messages() {
         _id: 1,
         user: {
           icon: LogoWhite,
-          name: 'Matheus Rovari',
+          name: navigation.state.params.user.name,
         },
         message: {
           text: 'Bom dia',
@@ -37,7 +37,7 @@ export default function Messages() {
         },
       },
     ],
-    [],
+    [navigation],
   );
 
   const renderItem = useCallback(
@@ -55,11 +55,11 @@ export default function Messages() {
   return (
     <Default>
       <Header>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => navigation.navigate('Chats')}>
           <Icon name="keyboard-backspace" color="#fff" size={22} />
         </TouchableOpacity>
         <MarkUp>@</MarkUp>
-        <Title>Bruno Cardoso</Title>
+        <Title>{navigation.state.params.user.name}</Title>
       </Header>
       <FlatList
         style={{
@@ -75,7 +75,7 @@ export default function Messages() {
         <MessageField
           value={text}
           onChangeText={(typing) => setText(typing)}
-          placeholder={'Conversar com @Bruno Cardoso'}
+          placeholder={`Conversar com @${navigation.state.params.user.name}`}
           placeholderTextColor="#656569"
         />
       </Content>

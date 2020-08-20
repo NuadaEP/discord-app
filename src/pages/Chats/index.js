@@ -125,7 +125,9 @@ function Chats({navigation}) {
       <ChatItem
         icon={item.icon}
         name={item.name}
-        onPress={() => navigation.navigate('Chats')}
+        onPress={() =>
+          navigation.navigate({routeName: 'Messages', params: {user: item}})
+        }
       />
     ),
     [navigation],

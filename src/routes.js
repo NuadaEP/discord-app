@@ -15,11 +15,11 @@ const screens = {
     navigationOptions: {
       headerShown: false,
     },
-    Messages: {
-      screen: Messages,
-      navigationOptions: {
-        headerShown: false,
-      },
+  },
+  Messages: {
+    screen: Messages,
+    navigationOptions: {
+      headerShown: false,
     },
   },
   Users: {
