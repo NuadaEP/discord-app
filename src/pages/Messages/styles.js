@@ -20,3 +20,14 @@ export const MarkUp = styled.Text`
   font-weight: bold;
   margin: 0 10px 0 12px;
 `;
+
+export const Content = styled.View`
+  width: 100%;
+  padding: 10px 0;
+`;
+
+export const MessageField = styled.TextInput`
+  background-color: #2f3136;
+  border-radius: 30px;
+  padding: 10px 15px;
+`;

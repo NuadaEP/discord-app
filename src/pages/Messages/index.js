@@ -1,4 +1,4 @@
-import React, {useMemo, useCallback} from 'react';
+import React, {useMemo, useCallback, useState} from 'react';
 import {FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -7,9 +7,11 @@ import MessageItem from '~/components/MessageItem';
 
 import LogoWhite from '~/assets/icon.png';
 
-import {Header, Title, MarkUp} from './styles';
+import {Header, Title, MarkUp, Content, MessageField} from './styles';
 
 function Messages() {
+  const [text, setText] = useState('');
+
   const messages = useMemo(
     () => [
       {
@@ -67,6 +69,14 @@ function Messages() {
         initialScrollIndex={messages.length - 1}
         inverted
       />
+      <Content>
+        <MessageField
+          value={text}
+          onChangeText={(typing) => setText(typing)}
+          placeholder={'Conversar com @Bruno Cardoso'}
+          placeholderTextColor="#656569"
+        />
+      </Content>
     </Default>
   );
 }
