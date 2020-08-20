@@ -1,7 +1,9 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useCallback} from 'react';
+import {FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
+import MessageItem from '~/components/MessageItem';
 
 import LogoWhite from '~/assets/icon.png';
 
@@ -25,6 +27,18 @@ function Messages() {
     [],
   );
 
+  const renderItem = useCallback(
+    ({item}) => (
+      <MessageItem
+        icon={item.user.icon}
+        name={item.user.name}
+        text={item.message.text}
+        date={item.message.date}
+      />
+    ),
+    [],
+  );
+
   return (
     <Default>
       <Header>
@@ -32,6 +46,14 @@ function Messages() {
         <MarkUp>@</MarkUp>
         <Title>Bruno Cardoso</Title>
       </Header>
+      <FlatList
+        style={{
+          width: '100%',
+        }}
+        data={messages}
+        keyExtractor={(item) => String(item._id)}
+        renderItem={renderItem}
+      />
     </Default>
   );
 }
