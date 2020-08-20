@@ -7,8 +7,15 @@ import SingIn from '~/pages/SingIn';
 
 import Chats from '~/pages/Chats';
 import Users from '~/pages/Users';
+import Messages from '~/pages/Messages';
 
 const screens = {
+  Messages: {
+    screen: Messages,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
   Chats: {
     screen: Chats,
     navigationOptions: {
