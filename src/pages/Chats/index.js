@@ -121,8 +121,14 @@ function Chats({navigation}) {
   );
 
   const renderItem = useCallback(
-    ({item}) => <ChatItem icon={item.icon} name={item.name} />,
-    [],
+    ({item}) => (
+      <ChatItem
+        icon={item.icon}
+        name={item.name}
+        onPress={() => navigation.navigate('Chats')}
+      />
+    ),
+    [navigation],
   );
 
   const handleChat = useCallback(

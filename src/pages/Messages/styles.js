@@ -6,6 +6,7 @@ export const Header = styled.View`
   align-items: center;
   padding: 20px 10px;
   background-color: #2f3136;
+  elevation: 5;
 `;
 
 export const Title = styled.Text`
@@ -30,4 +31,5 @@ export const MessageField = styled.TextInput`
   background-color: #2f3136;
   border-radius: 30px;
   padding: 10px 15px;
+  color: white;
 `;

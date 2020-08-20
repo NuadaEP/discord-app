@@ -1,5 +1,5 @@
 import React, {useMemo, useCallback, useState} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Default from '../_layouts/Default';
@@ -9,7 +9,7 @@ import LogoWhite from '~/assets/icon.png';
 
 import {Header, Title, MarkUp, Content, MessageField} from './styles';
 
-function Messages() {
+export default function Messages() {
   const [text, setText] = useState('');
 
   const messages = useMemo(
@@ -55,7 +55,9 @@ function Messages() {
   return (
     <Default>
       <Header>
-        <Icon name="keyboard-backspace" color="#fff" size={22} />
+        <TouchableOpacity onPress={() => {}}>
+          <Icon name="keyboard-backspace" color="#fff" size={22} />
+        </TouchableOpacity>
         <MarkUp>@</MarkUp>
         <Title>Bruno Cardoso</Title>
       </Header>
@@ -80,5 +82,3 @@ function Messages() {
     </Default>
   );
 }
-
-export default Messages;

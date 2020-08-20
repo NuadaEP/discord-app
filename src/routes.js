@@ -10,16 +10,16 @@ import Users from '~/pages/Users';
 import Messages from '~/pages/Messages';
 
 const screens = {
-  Messages: {
-    screen: Messages,
-    navigationOptions: {
-      headerShown: false,
-    },
-  },
   Chats: {
     screen: Chats,
     navigationOptions: {
       headerShown: false,
+    },
+    Messages: {
+      screen: Messages,
+      navigationOptions: {
+        headerShown: false,
+      },
     },
   },
   Users: {
